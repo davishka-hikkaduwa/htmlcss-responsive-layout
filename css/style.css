@@ -1,0 +1,165 @@
+/********** GENERICS **********/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/********** UTILITIES **********/
+
+.container {
+    width: 100%;
+    margin: 0 20px;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.column {
+    width: 100%;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+/**** shared ****/
+
+.card {
+    border-radius: 25px;
+    text-align: center;
+    background-color: white;
+
+}
+
+.card-text-left {
+    text-align: left;
+}
+
+/**** /shared ****/
+
+/********** CONTENT **********/
+
+header {
+
+    position: fixed;
+    background-color: blue;
+    width: 100%;
+    min-height: 80px;
+    line-height: 80px;
+}
+
+footer {
+    background-color: darkgrey;
+}
+
+.menu {
+    background-color: white;
+}
+
+.menu ul {
+    display: none;
+}
+
+header img,
+header .fa-bars {
+    vertical-align: middle;
+}
+
+section:nth-of-type(even) {
+    background-color: blueviolet;
+}
+
+/* product-presentation */
+
+#product-presentation .card {
+    background-color: cyan;
+}
+
+#product-presentation .column:first-child .card {
+    padding-bottom: 0;
+}
+
+/* /product-presentation */
+
+
+@media screen and (min-width: 768px) {
+    #product-presentation .column {
+        width: calc(100% / 3);
+        padding: 0 10px;
+    }
+
+    #product-presentation .column:first-child {
+        width: calc(100% / 3 * 2);
+
+    }
+
+    #product-presentation img {
+        width: 50%;
+    }
+
+
+
+
+}
+
+@media screen and (min-width: 1200px) {
+    .menu .fa-bars {
+        display: none;
+    }
+
+    .menu ul {
+        display: flex;
+    }
+
+    .menu li {
+        display: inline-block;
+    }
+}
+
+
+
+
+/********** debug **********/
+
+section {
+    min-height: 500px;
+}
+
+footer {
+    min-height: 160px;
+}
+
+.column {
+    border: 1px solid red;
+    min-height: 350px;
+}
+
+.card {
+    display: flex;
+    height: 400px;
+}
