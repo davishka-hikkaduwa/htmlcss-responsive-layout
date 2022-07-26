@@ -1,3 +1,16 @@
+/* VARIABLES */
+
+:root {
+    --even-section-bg-color: blueviolet;
+    --txt-color-white: #fff;
+    --txt-color-purple: blueviolet;
+    --txt-color-black: #000;
+    --font-size-h2: 34px;
+}
+
+
+
+
 /********** GENERICS **********/
 * {
     margin: 0;
@@ -6,8 +19,7 @@
 }
 
 body {
-    font-family: sans-serif;
-
+    font-family: 'Roboto', sans-serif
 }
 
 img {
@@ -22,7 +34,8 @@ ul {
 
 .container {
     width: 100%;
-    margin: 0 20px;
+    /* margin: 0; */
+    padding: 0 20px;
 }
 
 .flex {
@@ -50,14 +63,33 @@ ul {
 /**** shared ****/
 
 .card {
+    /* display: flex; */
     border-radius: 25px;
-    text-align: center;
+    /* text-align: center; */
     background-color: white;
+    padding: 25px;
+    line-height: 1.4;
+    /* flex-direction: column; */
 
 }
 
-.card-text-left {
+.text-left {
     text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    border-radius: 20px;
+    border-style: solid;
+    padding: 5px 25px;
+    background-color: var(--even-section-bg-color);
+    color: var(--txt-color-white);
+    margin: 20px 0;
+
 }
 
 /**** /shared ****/
@@ -71,10 +103,21 @@ header {
     width: 100%;
     min-height: 80px;
     line-height: 80px;
+    /* justify-content: space-between; */
 }
 
 footer {
     background-color: darkgrey;
+}
+
+main {
+    padding-top: 80px;
+}
+
+
+section {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .menu {
@@ -85,13 +128,19 @@ footer {
     display: none;
 }
 
+.fa-solid.fa-bars.fa-2x {
+    display: flex;
+    color: white;
+    background-color: blue;
+}
+
 header img,
 header .fa-bars {
     vertical-align: middle;
 }
 
 section:nth-of-type(even) {
-    background-color: blueviolet;
+    background-color: var(--even-section-bg-color);
 }
 
 /* product-presentation */
@@ -106,8 +155,92 @@ section:nth-of-type(even) {
 
 /* /product-presentation */
 
+/* testimonials */
 
-@media screen and (min-width: 768px) {
+#testimonials h2 {
+    color: var(--txt-color-purple);
+    font-size: var(--font-size-h2);
+}
+
+#testimonials .card {
+    background-color: var(--even-section-bg-color);
+
+}
+
+#testimonials img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.quoted-text::before,
+.quoted-text::after {
+    color: #fff;
+    vertical-align: bottom;
+    font-size: 70;
+    line-height: 1.2;
+}
+
+.quoted-text::before {
+    content: open-quote;
+}
+
+.quoted-text::after {
+    content: close-quote;
+}
+
+
+#testimonials .flex.card {
+    flex-direction: column;
+}
+
+/* /testimonials */
+
+/* working-with-us */
+#working-with-us .card h1,
+#working-with-us .card h3 {
+    font-weight: 700;
+    color: var(--txt-color-purple);
+}
+
+#working-with-us .card h1 {
+    font-size: 50px;
+}
+
+#working-with-us .card h3 {
+    font-size: 24px;
+}
+
+#working-with-us .card.text-left {
+    margin: 10px;
+}
+
+#working-with-us .flex.row {
+    padding: 40px 0;
+    justify-content: center;
+}
+
+#working-with-us .flex.row h2 {
+    color: var(--txt-color-white);
+    font-weight: 700;
+    font-size: var(--font-size-h2);
+    text-align: center;
+}
+
+/* /working-with-us */
+
+
+footer {
+    background-color: #333333;
+}
+
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+
     #product-presentation .column {
         width: calc(100% / 3);
         padding: 0 10px;
@@ -115,7 +248,6 @@ section:nth-of-type(even) {
 
     #product-presentation .column:first-child {
         width: calc(100% / 3 * 2);
-
     }
 
     #product-presentation img {
@@ -123,11 +255,19 @@ section:nth-of-type(even) {
     }
 
 
+    #testimonials .flex.card {
+        flex-direction: row;
+    }
 
+
+    #working-with-us .card {
+        width: calc((100% / 2) - 20px);
+    }
 
 }
 
 @media screen and (min-width: 1200px) {
+
     .menu .fa-bars {
         display: none;
     }
@@ -139,6 +279,23 @@ section:nth-of-type(even) {
     .menu li {
         display: inline-block;
     }
+
+
+    #product-presentation .column:first-child .card {
+        flex-direction: row;
+    }
+
+
+    #testimonials .flex.card {
+        flex-direction: row;
+    }
+
+
+
+    #working-with-us .card {
+        width: calc((100% / 3) - 20px);
+    }
+
 }
 
 
@@ -146,20 +303,19 @@ section:nth-of-type(even) {
 
 /********** debug **********/
 
-section {
+.debug section {
     min-height: 500px;
 }
 
-footer {
+.debug footer {
     min-height: 160px;
 }
 
-.column {
-    border: 1px solid red;
+.debug .column {
+    border: 1px dotted red;
     min-height: 350px;
 }
 
-.card {
-    display: flex;
-    height: 400px;
+.debug .card {
+    height: 100%;
 }
