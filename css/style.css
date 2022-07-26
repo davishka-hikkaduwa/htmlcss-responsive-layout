@@ -84,8 +84,8 @@ ul {
 button {
     display: inline-block;
     border-radius: 20px;
-    border-style: solid;
-    padding: 5px 25px;
+    border-style: none;
+    padding: 10px 30px;
     background-color: var(--even-section-bg-color);
     color: var(--txt-color-white);
     margin: 20px 0;
@@ -103,6 +103,7 @@ header {
     width: 100%;
     min-height: 80px;
     line-height: 80px;
+    z-index: 100;
     /* justify-content: space-between; */
 }
 
@@ -229,6 +230,37 @@ section:nth-of-type(even) {
 }
 
 /* /working-with-us */
+
+/* about-us */
+#about-us .row {
+    margin-bottom: 20px;
+}
+
+#about-us img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#about-us p {
+    line-height: 1.6;
+}
+
+#about-us h2 {
+    font-size: var(--font-size-h2);
+    color: var(--txt-color-purple);
+}
+
+.fa-solid.fa-quote-left {
+    color: var(--txt-color-purple);
+    font-size: 80px;
+    position: absolute;
+    z-index: 1;
+    left: 180px;
+}
+
+/* /about-us */
 
 
 footer {
