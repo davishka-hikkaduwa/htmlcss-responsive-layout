@@ -21,7 +21,8 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif
+    font-family: 'Roboto', sans-serif;
+
 }
 
 img {
@@ -53,7 +54,7 @@ ul {
 .column {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .align-center {
@@ -67,13 +68,14 @@ ul {
 /**** shared ****/
 
 .card {
+    width: 100%;
     /* display: flex; */
     border-radius: 25px;
     /* text-align: center; */
     background-color: white;
     padding: 25px;
     line-height: 1.4;
-    /* flex-direction: column; */
+    flex-direction: column;
 
 }
 
@@ -93,6 +95,8 @@ button {
     background-color: var(--even-section-bg-color);
     color: var(--txt-color-white);
     margin: 20px 0;
+    flex-grow: 0;
+
 
 }
 
@@ -104,7 +108,7 @@ header {
 
     position: fixed;
     background-color: var(--color-blue);
-    width: 100%;
+    min-width: 100%;
     min-height: 80px;
     line-height: 80px;
     z-index: 100;
@@ -117,12 +121,15 @@ footer {
 
 main {
     padding-top: 80px;
+
 }
 
 
 section {
     margin-top: 50px;
     margin-bottom: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .menu {
@@ -251,7 +258,7 @@ section:nth-of-type(even) {
     margin: 10px;
 }
 
-#working-with-us .flex.row {
+#working-with-us .row {
     padding: 40px 0;
     justify-content: center;
 }
@@ -261,6 +268,10 @@ section:nth-of-type(even) {
     font-weight: 700;
     font-size: var(--font-size-h2);
     text-align: center;
+}
+
+#working-with-us button {
+    letter-spacing: 3px;
 }
 
 /* /working-with-us */
@@ -308,12 +319,12 @@ footer {
 @media screen and (min-width: 768px) and (max-width: 1200px) {
 
     #product-presentation .column {
-        width: calc(100% / 3);
+        flex-basis: calc(100% / 3);
         padding: 0 10px;
     }
 
     #product-presentation .column:first-child {
-        width: calc(100% / 3 * 2);
+        flex-basis: calc(100% / 3 * 2);
     }
 
     #product-presentation img {
@@ -362,6 +373,11 @@ footer {
         width: calc((100% / 3) - 20px);
     }
 
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
 }
 
 
@@ -369,19 +385,19 @@ footer {
 
 /********** debug **********/
 
-.debug section {
+/* .debug section {
     min-height: 500px;
-}
+} */
 
 .debug footer {
     min-height: 160px;
 }
 
-.debug .column {
+/* .debug .column {
     border: 1px dotted red;
     min-height: 350px;
 }
 
 .debug .card {
     height: 100%;
-}
+} */
